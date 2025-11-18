@@ -1,0 +1,553 @@
+<!--
+    NEW SECTIONS TO ADD TO INDEX.HTML
+    Copy and paste these sections into your index.html where indicated
+    All CSS and JavaScript is already set up - just add the HTML!
+-->
+
+<!-- ============================================
+     ADD THIS TO THE <head> SECTION
+     ============================================ -->
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1565C0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Audiocoustics">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.audiocoustics.co.za/">
+<meta property="og:title" content="Audiocoustics | Professional Mobile Audio & Video Installation | Cape Town">
+<meta property="og:description" content="We come to you! Professional mobile installation for car audio, CCTV, security systems, DSTV, and more. Decades of experience across Cape Town.">
+<meta property="og:image" content="https://www.audiocoustics.co.za/images/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.audiocoustics.co.za/">
+<meta property="twitter:title" content="Audiocoustics | Professional Mobile Audio & Video Installation">
+<meta property="twitter:description" content="We come to you! Professional mobile installation for car audio, CCTV, security systems, DSTV, and more.">
+<meta property="twitter:image" content="https://www.audiocoustics.co.za/images/twitter-image.jpg">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Audiocoustics",
+  "image": "https://www.audiocoustics.co.za/images/logo.jpg",
+  "@id": "https://www.audiocoustics.co.za",
+  "url": "https://www.audiocoustics.co.za",
+  "telephone": "+27815987961",
+  "email": "info@audiocoustics.co.za",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Town",
+    "addressRegion": "Western Cape",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9249,
+    "longitude": 18.4241
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "17:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/audiocoustics",
+    "https://www.instagram.com/audiocoustics"
+  ],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "100"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Cape Town"
+  },
+  "serviceType": [
+    "Car Audio Installation",
+    "CCTV Installation",
+    "Security Systems",
+    "DSTV Installation",
+    "Gate Motors",
+    "PA Systems",
+    "Marine Audio"
+  ]
+}
+</script>
+
+<!-- Enhanced JavaScript -->
+<script src="js/enhanced.js" defer></script>
+
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => console.log('SW registered:', registration))
+            .catch(error => console.log('SW registration failed:', error));
+    });
+}
+</script>
+
+<!-- ============================================
+     ADD THESE IMMEDIATELY AFTER <body> TAG
+     ============================================ -->
+
+<!-- Scroll Progress Indicator -->
+<div class="scroll-progress"></div>
+
+<!-- Dark Mode Toggle -->
+<button class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+    </svg>
+</button>
+
+<!-- ============================================
+     ADD AFTER THE SERVICES SECTION
+     ============================================ -->
+
+<!-- Gallery / Portfolio Section -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Our Work</h2>
+            <p class="section-subtitle" data-reveal>Browse our portfolio of professional installations across Cape Town</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Example gallery items - Add your actual images -->
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-1.jpg" alt="Car audio installation" class="lazy" data-src="images/gallery/install-1.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Car Audio System - Camps Bay</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-2.jpg" alt="CCTV installation" class="lazy" data-src="images/gallery/install-2.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">CCTV Security System - Century City</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-3.jpg" alt="Android head unit" class="lazy" data-src="images/gallery/install-3.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Android Head Unit - Claremont</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-4.jpg" alt="Gate motor installation" class="lazy" data-src="images/gallery/install-4.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Automated Gate Motor - Newlands</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-5.jpg" alt="DSTV installation" class="lazy" data-src="images/gallery/install-5.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">DSTV Satellite - Milnerton</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <img src="images/gallery/install-6.jpg" alt="Security system" class="lazy" data-src="images/gallery/install-6.jpg">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Security Alarm System - Plattekloof</p>
+                </div>
+            </div>
+
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox for Gallery -->
+<div class="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">×</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+    <div class="lightbox-content">
+        <img src="" alt="Gallery image">
+    </div>
+</div>
+
+<!-- Before/After Section -->
+<section class="before-after-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>See The Difference</h2>
+            <p class="section-subtitle" data-reveal>Drag the slider to see before and after our professional installations</p>
+        </div>
+
+        <div class="before-after-slider" data-reveal>
+            <div class="before-after-container">
+                <img src="images/before.jpg" alt="Before installation" class="before-image lazy" data-src="images/before.jpg">
+                <img src="images/after.jpg" alt="After installation" class="after-image lazy" data-src="images/after.jpg">
+                <div class="slider-handle">
+                    <div class="slider-button">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                            <path d="M8.59 16.59L4.01 12l4.58-4.59L7.18 6l-6 6 6 6 1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="slider-labels">
+                    <span class="label-before">BEFORE</span>
+                    <span class="label-after">AFTER</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     ADD AFTER THE ABOUT SECTION
+     ============================================ -->
+
+<!-- Process Timeline -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>How We Work</h2>
+            <p class="section-subtitle" data-reveal>Our simple, professional process from contact to completion</p>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-step" data-reveal>
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3 class="process-title">Get In Touch</h3>
+                    <p class="process-description">WhatsApp, call, or submit our online form. Tell us what you need.</p>
+                </div>
+            </div>
+
+            <div class="process-step" data-reveal>
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3 class="process-title">Free Assessment</h3>
+                    <p class="process-description">We'll assess your requirements and provide a detailed quote.</p>
+                </div>
+            </div>
+
+            <div class="process-step" data-reveal>
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3 class="process-title">Schedule Installation</h3>
+                    <p class="process-description">Choose a convenient time and location. We come to you!</p>
+                </div>
+            </div>
+
+            <div class="process-step" data-reveal>
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3 class="process-title">Professional Installation</h3>
+                    <p class="process-description">Expert installation with quality products and attention to detail.</p>
+                </div>
+            </div>
+
+            <div class="process-step" data-reveal>
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3 class="process-title">Quality Assurance</h3>
+                    <p class="process-description">Testing and demonstration to ensure everything works perfectly.</p>
+                </div>
+            </div>
+
+            <div class="process-step" data-reveal>
+                <div class="process-number">6</div>
+                <div class="process-content">
+                    <h3 class="process-title">Ongoing Support</h3>
+                    <p class="process-description">Warranty and support for all installations. We're here when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>What Our Clients Say</h2>
+            <p class="section-subtitle" data-reveal>Real reviews from satisfied customers across Cape Town</p>
+        </div>
+
+        <div class="testimonials-carousel" data-reveal>
+            <div class="testimonial-card active">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Excellent service! They installed a full security system and CCTV at my home. Professional, efficient, and the system works perfectly. Highly recommended!"</p>
+                <p class="testimonial-author">John Smith</p>
+                <p class="testimonial-location">Century City</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Best car audio installation I've ever had. The Android head unit is amazing and the sound quality is incredible. Worth every cent!"</p>
+                <p class="testimonial-author">Sarah Johnson</p>
+                <p class="testimonial-location">Claremont</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Very professional service. They came to my office, installed DSTV in our boardroom, and had it working in no time. No mess, no fuss."</p>
+                <p class="testimonial-author">Mike Peters</p>
+                <p class="testimonial-location">Waterfront</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Amazing mobile service! They installed my gate motor and programmed all the remotes. Saved me so much time not having to go anywhere."</p>
+                <p class="testimonial-author">Lisa van der Merwe</p>
+                <p class="testimonial-location">Newlands</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Highly skilled technicians. They installed a reverse camera in my bakkie and it's worked flawlessly. Great value for money."</p>
+                <p class="testimonial-author">David Williams</p>
+                <p class="testimonial-location">Milnerton</p>
+            </div>
+
+            <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Frequently Asked Questions</h2>
+            <p class="section-subtitle" data-reveal>Got questions? We've got answers!</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>Do you really come to my location?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! That's our specialty. We're a fully mobile service - we come to your home, office, or any location across Cape Town. No need to travel or drop off your vehicle.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>How long does installation typically take?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>It depends on the service. Car audio installations typically take 2-4 hours, CCTV systems 4-8 hours depending on cameras, and gate motors 2-3 hours. We'll give you an accurate time estimate with your quote.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>What areas do you service?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We service the greater Cape Town area including City Bowl, Northern Suburbs, Southern Suburbs, Atlantic Seaboard, and West Coast areas. See our Service Areas section for specific suburbs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>Do you offer warranties?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! All our installations come with a workmanship warranty. Products carry manufacturer warranties which vary by brand. We'll provide full warranty details with your installation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept cash, EFT/bank transfer, and card payments. Payment is due upon completion of installation. Deposit may be required for large installations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>Can I supply my own products?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we can install products you've purchased. However, we can only warranty the installation, not the products themselves. We also source quality products at competitive prices.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>Do you offer emergency services?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>For security-related issues (alarms, CCTV failures), we offer priority service. Contact us via WhatsApp or phone and we'll assist as quickly as possible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-reveal>
+                <div class="faq-question">
+                    <span>How do I get a quote?</span>
+                    <svg class="faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Easy! WhatsApp us at 081 598 7961 (fastest), call us, or complete our online enquiry form. If needed, we can visit your location for an assessment before providing a detailed quote.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Brand Showcase -->
+<section class="brands-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-reveal>Trusted Brands We Work With</h2>
+        </div>
+
+        <div class="brands-grid">
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">Sony</div>
+            </div>
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">Parrot</div>
+            </div>
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">BURY</div>
+            </div>
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">Sanji</div>
+            </div>
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">DSTV</div>
+            </div>
+            <div class="brand-item" data-reveal>
+                <div class="brand-logo">Cartrack</div>
+            </div>
+            <!-- Add more brands as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     ADD BEFORE CLOSING </body> TAG
+     ============================================ -->
+
+<!-- Mobile CTA Bar -->
+<div class="mobile-cta-bar">
+    <div class="container">
+        <div class="mobile-cta-buttons">
+            <a href="tel:0815987961" class="btn btn-secondary">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                Call
+            </a>
+            <a href="https://wa.me/27815987961" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Exit Intent Popup -->
+<div class="exit-popup">
+    <div class="exit-popup-content">
+        <button class="exit-popup-close" aria-label="Close popup">×</button>
+        <h3>Wait! Before You Go...</h3>
+        <p>Get expert advice and a free quote for your installation needs!</p>
+        <div class="exit-popup-offer">
+            Contact us now via WhatsApp for immediate assistance
+        </div>
+        <a href="https://wa.me/27815987961" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Chat With Us on WhatsApp
+        </a>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600);">
+            Fast response • Free quotes • No obligation
+        </p>
+    </div>
+</div>
+
+<!-- Social Proof Notification -->
+<div class="social-proof-notification">
+    <div class="notification-content">
+        <div class="notification-icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        <div class="notification-text">
+            <strong>John from Claremont</strong>
+            <span>just booked a car audio installation</span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     INSTRUCTIONS
+     ============================================
+
+     1. Copy the <head> additions to your index.html <head> section
+     2. Copy the <body> additions right after your <body> tag
+     3. Insert the new sections where indicated in the comments
+     4. Update image paths to match your actual images
+     5. Customize content (testimonials, FAQs, brands) with real data
+     6. Test all interactive features
+
+     All CSS is already in styles.css
+     All JavaScript is in enhanced.js
+
+     Just add the HTML and you're done!
+     ============================================ -->
